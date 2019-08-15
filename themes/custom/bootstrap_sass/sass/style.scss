@@ -1,0 +1,609 @@
+// Default variables.
+@import url('https://fonts.googleapis.com/css?family=Varela+Round&display=swap');
+//@import url('https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css');
+@font-face {
+  font-family: "FontAwesome";
+  font-weight: normal;
+  font-style: normal;
+  src: url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?v=4.3.0");
+  src: url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.eot?#iefix&v=4.3.0") format("embedded-opentype"),
+  url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff2?v=4.3.0") format("woff2"),
+  url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.woff?v=4.3.0") format("woff"),
+  url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.ttf?v=4.3.0") format("truetype"),
+  url("http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/fonts/fontawesome-webfont.svg?v=4.3.0#fontawesomeregular") format("svg");
+}
+
+$font-family-sans-serif: 'Varela Round', sans-serif;
+$font-size-base: 16px;
+$text-color: #333;
+
+h1.page-header {
+  display: none;
+}
+
+.border {
+  border: 1px red solid !important;
+}
+
+.border-blue {
+  border: 1px blue solid !important;
+}
+
+.border-yellow {
+  border: 1px yellow solid !important;
+}
+
+.border-orange {
+  border: 1px orange solid !important;
+}
+
+.main-container.container {
+  padding: 0;
+  width: 100%;
+  margin: 0;
+}
+
+//Header navbar
+.region.region-navigation-collapsible {
+  padding: 0 28px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+
+  .block-block-content96ae514b-548e-4217-b025-8bb19a05ab2b {
+    display: flex;
+    align-items: center;
+
+    a[href="/drupal1/"] {
+      color: #333;
+      padding: 14px 0;
+      font-weight: 700;
+      font-size: 24px;
+      letter-spacing: 4px;
+
+      &:hover {
+        text-decoration: none;
+      }
+
+      &:before {
+        font-family: "FontAwesome";
+        font-weight: 100;
+        padding-right: 10px;
+        color: #DF3D33;
+        content: "\f0f5";
+      }
+    }
+  }
+
+  .block-block-content4ef85cbe-3ff0-48c6-86c3-69ea8d5fb138 {
+    display: flex;
+    align-items: center;
+    width: 164px;
+
+    a[href="/drupal1/node/add/recipe"] {
+      color: #fff;
+      background: #DF3D33;
+      padding: 14px;
+      border-radius: 8px;
+      font-weight: 700;
+
+      &:hover {
+        text-decoration: none;
+        box-shadow: 0 0 12px rgba(0, 0, 0, .1);
+      }
+
+      &:before {
+        font-family: "FontAwesome";
+        font-weight: 100;
+        padding-right: 10px;
+        content: "\f093";
+      }
+    }
+  }
+
+}
+
+header#navbar {
+  background: #fff;
+  border: none;
+  box-shadow: 0 0 4px rgba(0, 0, 0, .2);
+
+  nav {
+    ul.navbar-nav {
+
+      li {
+        &:nth-child(2):hover {
+          .menu.dropdown-menu {
+            display: block;
+          }
+        }
+
+        .menu.dropdown-menu {
+          padding: 0;
+
+          a {
+            padding: 10px 20px !important;
+            color: #333 !important;
+            background: #fff !important;
+            border-bottom: 3px #fff solid !important;
+            font-weight: 700 !important;
+
+            &:hover {
+              background: #DF3D33 !important;
+              color: #fff !important;
+              border-bottom: 3px #DF3D33 solid !important;
+            }
+          }
+        }
+
+        a {
+          padding: 20px 24px;
+          color: #333;
+          background: #fff;
+          border-bottom: 3px #fff solid;
+          font-weight: 700;
+
+          &:hover {
+            background: #DF3D33;
+            color: #fff;
+            border-bottom: 3px #DF3D33 solid;
+          }
+        }
+
+        &.active {
+          > a {
+            background: #fff !important;
+            color: #DF3D33;
+            border-bottom: 3px #DF3D33 solid;
+          }
+        }
+      }
+    }
+
+
+  }
+}
+
+// Top Recipes Section
+div[role="heading"] {
+  background: #F7F7F7;
+}
+
+div.region.region-header {
+
+  @extend .container;
+  display: flex;
+  background: #F7F7F7;
+  padding: 35px 0px;
+
+  .block-views-blocktop-lunch-recipes-block-1, .block-views-blocktop-breakfast-recipes-block-1, .block-views-blocktop-dinner-recipes-block-1 {
+    @extend .col-lg-4;
+    //@extend .border;
+    float: none;
+    height: 100%;
+
+    .block-title {
+      margin-top: 0;
+      font-size: 20px;
+      font-weight: 500;
+      color: #DBDBDB;
+
+      &:before {
+        font-family: "FontAwesome";
+        font-weight: 100;
+        padding-right: 10px;
+        content: "\f0f5";
+      }
+    }
+
+    .views-field-field-short-summary {
+      padding-top: 10px;
+      padding-left: 10px;
+
+      .field-content {
+        grid-area: summary;
+        //border: 1px orangered solid;
+        color: #666;
+        height: 68px;
+        overflow: hidden;
+        display: block;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;
+      }
+    }
+
+    .views-field-field-upload-your-photos {
+      grid-area: image;
+
+      .field-content {
+        a {
+          img {
+            object-fit: cover;
+            width: 100px;
+            height: 100px;
+            border-radius: 8px;
+          }
+        }
+      }
+    }
+
+    .views-field-field-recipe-title {
+      grid-area: title;
+      padding-left: 10px;
+      //border: 1px green solid;
+
+      a {
+        color: #333 !important;
+        font-weight: 600;
+      }
+    }
+
+    .form-group {
+      background: #fff;
+      box-shadow: 0 5px 16px rgba(0, 0, 0, .3);
+
+      &:hover {
+        box-shadow: 0 5px 26px rgba(0, 0, 0, .3);
+
+      }
+
+      padding: 15px;
+
+      .views-row {
+        display: grid;
+        grid-template-areas: 'image image title title title title' 'image image summary summary summary summary' 'image image summary summary summary summary';
+        //grid-gap: 10px;
+        //background-color: #2196F3;
+        //padding: 10px;
+      }
+
+      .views-col {
+        display: grid;
+        grid-template-areas: 'image image title title title title' 'image image summary summary summary summary' 'image image summary summary summary summary';
+      }
+    }
+  }
+}
+
+//Recipes of the day
+div.region.region-content {
+  //@extend .container;
+
+  .block-views-blockrecipes-of-the-day-block-1 {
+
+    .block-title {
+      text-align: center;
+      font-weight: 700;
+      padding-bottom: 25px;
+    }
+
+    .views-row {
+      padding: 0 !important;
+      border: 1px #E2E2E2 solid;
+      box-shadow: 0 2px 15px rgba(0, 0, 0, .3);
+
+      &:hover {
+        box-shadow: 0 2px 25px rgba(0, 0, 0, .3);
+
+      }
+
+      margin: 0 auto !important;
+      float: none !important;
+      @extend .col-lg-8;
+
+      .views-field-field-author {
+        background: #DF3D33;
+        padding: 10px;
+
+        a {
+          color: #fff;
+
+          &:before {
+            font-family: "FontAwesome";
+            font-weight: 100;
+            padding-right: 0px;
+            content: "\f007";
+            color: #fff;
+          }
+        }
+      }
+
+      .views-field-field-recipe-title {
+        font-size: 20px;
+        font-weight: 600;
+        text-align: center;
+        padding: 30px 15px 5px;
+      }
+
+      .views-field-field-upload-your-photos {
+        img {
+
+          width: 100%;
+        }
+      }
+
+      .views-field-field-short-summary {
+        font-size: 16px;
+        font-weight: 500;
+        color: #7C7C7C;
+        text-align: center;
+        padding: 0 30px 5px;
+      }
+
+      .views-field-field-tag {
+        text-align: center;
+        margin-top: 20px;
+        margin-bottom: 30px;
+
+        a {
+          color: #666;
+          border: 1px #DEDEDE solid;
+          border-radius: 155px;
+          padding: 5px 30px;
+          margin-right: 5px;
+
+          &:hover {
+            color: #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+          }
+        }
+      }
+    }
+  }
+}
+
+//region-content
+.view-frontpage {
+  @extend .container;
+
+  .view-header {
+    padding-top: 50px;
+    border-bottom: 1px #dedede dashed;
+
+    h2 {
+      font-size: 24px;
+      color: #666;
+
+      &:before {
+        font-family: "FontAwesome";
+        font-weight: 100;
+        padding-right: 10px;
+        content: "\f0f5";
+        color: #666;
+      }
+    }
+  }
+
+  .view-content {
+    .views-row {
+      display: grid;
+      overflow: hidden;
+      border: 1px #DEDEDE solid;
+      margin-top: 30px;
+      box-shadow: 0 1px 10px rgba(0, 0, 0, .2);
+
+      .views-field-field-author {
+        grid-column: 1/ span 7;
+        grid-row: 1;
+        background: #DF3D33;
+        padding: 10px;
+
+        a {
+          color: #fff;
+
+          &:before {
+            font-family: "FontAwesome";
+            font-weight: 100;
+            padding-right: 5px;
+            content: "\f007";
+            color: #fff;
+          }
+        }
+      }
+
+      .views-field-field-upload-your-photos {
+        grid-column: 1;
+        grid-row: 2 / span 3;
+        padding: 20px 0 20px 20px;
+
+        img {
+          margin: 0 !important;
+        }
+      }
+
+      .views-field-field-recipe-title {
+        grid-column: 2 / span 6;
+        grid-row: 2;
+        padding-top: 20px;
+        @extend .translate;
+
+        a {
+          color: #333;
+          font-weight: 700;
+        }
+
+      }
+
+      .views-field-field-short-summary {
+        grid-column: 2 / span 6;
+        grid-row: 3;
+
+        div {
+          text-overflow: ellipsis;
+          overflow: hidden;
+          max-width: 300px;
+          white-space: nowrap;
+        }
+
+        @extend .translate;
+
+
+      }
+
+      .translate {
+        transform: translateX(-80px);
+      }
+
+      .views-field-field-tag {
+        grid-column: 2 / span 6;
+        grid-row: 4;
+        @extend .translate;
+
+        a {
+          color: #666;
+          border: 1px #DEDEDE solid;
+          border-radius: 155px;
+          padding: 5px 30px;
+          margin-right: 5px;
+
+          &:hover {
+            color: #000;
+            box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+          }
+        }
+
+
+      }
+
+    }
+  }
+
+  .view-footer {
+    padding-top: 80px;
+    text-align: center;
+
+    a {
+      margin-left: auto;
+      padding: 10px;
+      border: 1px #DEDEDE solid;
+      border-radius: 150px;
+      color: #666666;
+      text-decoration: none;
+
+      &:hover {
+        color: #000;
+        box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+      }
+    }
+  }
+
+}
+
+//browse_recipies
+.view-browse-recipies {
+  @extend .border-blue;
+
+  .view-filters.form-group {
+    @extend .border-orange;
+    background: #F8F8F8;
+
+    form {
+      @extend .container;
+    }
+  }
+
+  .view-content {
+    @extend .border-yellow;
+    @extend .container;
+
+    .views-col {
+      padding: 15px;
+
+      article {
+        border: 1px #DEDEDE solid;
+        box-shadow: 0 2px 16px rgba(0, 0, 0, .3);
+
+        h2 {
+          display: none;
+        }
+
+        .field.field--name-field-author {
+          background: #DF3D33;
+          padding: 10px;
+
+          a {
+            color: #fff;
+
+            &:before {
+              font-family: "FontAwesome";
+              font-weight: 100;
+              padding-right: 5px;
+              content: "\f007";
+              color: #fff;
+            }
+          }
+        }
+
+        .field.field--name-field-recipe-title {
+          padding: 0 40px;
+          margin-top: 20px;
+          margin-bottom: 5px;
+          text-align: center;
+          height: 44px;
+          overflow: hidden;
+
+          a {
+            color: #333;
+            font-weight: 700;
+
+            &:hover {
+              text-decoration: none;
+            }
+          }
+        }
+
+        .field.field--name-field-short-summary {
+          padding: 0 40px;
+          text-align: center;
+          overflow: hidden;
+          display: block;
+          height: 40px;
+          text-overflow: ellipsis;
+          -webkit-box-orient: vertical;
+        }
+
+        .field.field--name-field-tag {
+          display: grid;
+          grid-template-columns: auto auto auto;
+          padding: 0 20px;
+          margin-top: 5px;
+          margin-bottom: 20px;
+          height: 37px;
+          overflow: hidden;
+          //grid-gap: 10px;
+
+          .field--item {
+            padding: 5px;
+            margin-top: 5px;
+            a {
+              white-space: nowrap;
+              color: #666;
+              border: 1px #DEDEDE solid;
+              border-radius: 155px;
+              padding: 5px 15px;
+              margin-right: 5px;
+              &:hover {
+                color: #000;
+                box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+              }
+            }
+          }
+
+
+        }
+
+      }
+    }
+  }
+}
+
+.feed-icons {
+  display: none;
+}
+
+@import "default-variables";
+
+// Bootstrap Framework.
+@import '../bootstrap/assets/stylesheets/bootstrap';
+// Base-theme overrides.
+@import 'overrides';
